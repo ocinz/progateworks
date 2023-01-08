@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FizzBuzz</title>
+  </head>
+  <body>
+    <h1>Get a FizzBuzz Result!</h1>
+    <p>Type a number: <input id="input" type="text" value="" /> <button onclick="fizzBuzz()">Click here!</button></p>
+    <hr style="color: rgb(0, 0, 0); height: 1px" />
+    <div id="hasil"></div>
+
+    <script>
+      let counter = [];
+
+      function fizzBuzz() {
+        //mengambil value dari input
+        const nilai = document.getElementById("input").value;
+        console.log(nilai);
+
+        //percabangan & push nilai ke array
+        if (nilai % 3 == 0 && nilai % 5 == 0) {
+          counter.push("FizzBuzz!");
+        } else if (nilai % 3 == 0) {
+          counter.push("Fizz!");
+        } else if (nilai % 5 == 0) {
+          counter.push("Buzz!");
+        } else {
+          counter.push(nilai);
+        }
+
+        //membuat element hasil
+        const div = document.getElementById("hasil");
+
+        for (let i = 0; i < counter.length; i++) {
+          const par = document.createElement("p");
+          par.className = "lope";
+          div.append(par);
+          document.getElementsByClassName("lope")[i].innerHTML = counter[i];
+        }
+      }
+    </script>
+  </body>
+</html>
