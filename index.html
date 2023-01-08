@@ -8,7 +8,7 @@
   </head>
   <body>
     <h1>Get a FizzBuzz Result!</h1>
-    <p>Type a number: <input id="input" type="text" value="" /> <button onclick="fizzBuzz()">Click here!</button></p>
+    <p>Type a number: <input id="input" type="number" value="" /> <button onclick="fizzBuzz()">Click here!</button></p>
     <hr style="color: rgb(0, 0, 0); height: 1px" />
     <div id="hasil"></div>
 
@@ -21,7 +21,9 @@
         console.log(nilai);
 
         //percabangan & push nilai ke array
-        if (nilai % 3 == 0 && nilai % 5 == 0) {
+        if (nilai == 0) {
+          counter.push("invalid input");
+        } else if (nilai % 3 == 0 && nilai % 5 == 0) {
           counter.push("FizzBuzz!");
         } else if (nilai % 3 == 0) {
           counter.push("Fizz!");
@@ -38,7 +40,8 @@
           const par = document.createElement("p");
           par.className = "lope";
           div.append(par);
-          document.getElementsByClassName("lope")[i].innerHTML = counter[i];
+          let isi = document.getElementsByClassName("lope")[i];
+          isi.innerHTML = counter[i];
         }
       }
     </script>
